@@ -52,8 +52,8 @@ def inspect_sources(schema):
             filters = {f['name'] for f in types.get(args.get('where'), {}).get('inputFields') or []}
             orders = {v['name'] for v in types.get(args.get('orderBy'), {}).get('enumValues') or []}
             required = {'id', 'timestamp'}
-            if not required <= fields.keys() or not {'first','where','block','orderBy','orderDirection'} <= args.keys() or not {'and','or','timestamp','timestamp_gt','timestamp_gte','timestamp_lt','id_gt'} <= filters or 'timestamp' not in orders:
-                reasons.append(name + ': missing required timestamp/ID pagination fields or filters')
+            if not required <= fields.keys() or base_type(fields.get('timestamp', {}).get('type')).get('name') != 'BigInt' or not {'first','where','block','orderBy','orderDirection'} <= args.keys() or not {'and','or','timestamp','timestamp_gt','timestamp_gte','timestamp_lt','id_gt'} <= filters or 'timestamp' not in orders:
+                reasons.append(name + ': missing compatible BigInt timestamp/ID pagination fields or filters')
                 continue
             selection = []
             for field, info in fields.items():

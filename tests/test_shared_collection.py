@@ -43,6 +43,8 @@ class SharedCollectionTests(unittest.TestCase):
         self.assertEqual(coverage['collateral_changes']['status'],'unavailable')
         schema=schema_fixture();schema['types'][-2]['inputFields']=[]
         self.assertEqual(inspect_sources(schema)[0],{})
+        schema=schema_fixture();schema['types'][1]['fields'][1]['type']['name']='Int'
+        self.assertEqual(inspect_sources(schema)[0],{})
 
     def test_supplementary_cache_resume_keeps_core_isolated(self):
         with tempfile.TemporaryDirectory() as tmp:
