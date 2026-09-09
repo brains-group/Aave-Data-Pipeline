@@ -7,3 +7,5 @@ output/
 build/
 dist/
 *.sqlite3*
+
+.cache/

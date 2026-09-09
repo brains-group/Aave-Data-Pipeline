@@ -21,6 +21,8 @@ def read_config(path=None):
                          ("TRANSACTIONS_PATH", "./data"), ("USERS_PATH", "./data"), ("LOG_DIR", "./log")):
         value = Path(config.get(key, default)).expanduser()
         config[key] = str(value if value.is_absolute() else path.parent / value)
+    # The collection cache follows exported data, independent of model CACHE_DIR.
+    config["COLLECTION_CACHE_DIR"] = str(Path(config["TRANSACTIONS_PATH"]) / ".cache")
     return config
 
 

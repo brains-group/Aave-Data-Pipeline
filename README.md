@@ -16,12 +16,12 @@ Configure paths relative to the config file, never the installed package. Standa
 CLI defaults to `config.json` in the current directory or `AAVE_PIPELINE_CONFIG`.
 Copy sample.config.json and sample.env; keep the actual .env ignored. Pass --env-file
 when outside its directory. Consumer wrappers preserve their root .env and craft-soc's
-codes/config.json, root log/, and original codes/cache directory. The recommender's
+codes/config.json and root log/. Collection caches now follow the shared output folder. The recommender's
 pipeline.sample.config.json explicitly points to that same cache without moving it.
 Only one writer may use a cache at a time.
 
 CSV output paths are directories. Filenames include protocol/version/market.
-Cache paths are `CACHE_DIR/data_collection/aave_v3/<market>/<deployment-hash>/raw.sqlite3`.
+Cache paths are `TRANSACTIONS_PATH/.cache/data_collection/aave_v3/<market>/<deployment-hash>/raw.sqlite3`.
 Never copy an empty cache over the old one. Supplementary evidence lives in a separate
 `supplementary/aave_v3/<market>/<source>/<provenance-hash>/` tree.
 
@@ -113,3 +113,43 @@ identity, source kind, coverage start/end and completeness; rows retain ordering
 metadata and lossless decoded payloads. It does not claim unavailable historical
 RPC/subgraph coverage or generate survival events. See docs/SOURCES.md. Live source
 adapters and historical deployment mapping remain unfinished.
+
+## Optional simulator events and the shared cache
+
+Both local consumers use `/home/spadef/data/craft-soc/data` for transactions and users.
+Collection always derives its cache root from `TRANSACTIONS_PATH/.cache`; `CACHE_DIR`
+continues to control unrelated research caches. Do not set up a second output directory
+if the intention is to reuse the same download. The old craft-soc collection subtree
+is migrated and replaced with a compatibility symlink; no source namespace is renamed.
+A per-market POSIX lock is acquired before HTTP requests. An unmigrated legacy cache
+causes an error instead of silently starting an empty download.
+
+After verifying free allowance and disabled paid overage, from either consumer:
+
+```bash
+python collect_aave.py --market polygon --include-supplementary \
+  --free-access-confirmed --max-requests 100
+```
+
+Use `--supplementary-only` instead of `--include-supplementary` to download only the
+extra sources without refreshing core events or account snapshots. The example is
+an attempt cap, not a promise that 100 requests completes history or is free for your key.
+Metadata/schema requests and retries consume the same budget. No billing is enabled.
+
+The serving schema is checked once per deployment and cached. Candidate sources:
+transfers, collateral changes, eMode changes, rate-mode changes, flash loans, position
+snapshots, reserve-parameter history and price history. Only timestamp/ID-compatible
+roots are queried. The public Messari schema defines transfers, flashloans and position
+snapshots; this does not establish what the configured deployment indexes or its coverage.
+Unavailable sources are explicitly reported in `coverage.json`, not downloaded as empty
+complete histories. A compatible supplementary-only endpoint may be supplied with
+`--endpoint`; its deployment gets its own cache and output namespace.
+
+Supplementary cache: `.cache/supplementary/aave_v3/<market>/<deployment>/<entity>/<selection>/`.
+CSV and coverage exports: `supplementary/aave_v3/<market>/<deployment>/` in the output folder.
+Each CSV keeps IDs, ordering metadata and a lossless JSON payload with raw amounts.
+Transfer assets can be collateral OR debt tokens. Snapshots are post-event indexed
+reconstructions; neither is automatically applied to simulator positions. Related objects
+retain IDs only (plus token symbol/decimals); present-day account/position totals are not
+joined into historical rows. Core CSVs, survival tasks and labels stay separate.
+An indexed interval marked complete does not certify complete historical on-chain coverage.

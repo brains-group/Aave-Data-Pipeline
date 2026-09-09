@@ -117,7 +117,9 @@ class Client:
 
 
 class Cache:
-    def __init__(self, path):
+    def __init__(self, path, fields=None, chronological=None):
+        self.fields = FIELDS if fields is None else fields
+        self.chronological = set(EVENTS) if chronological is None else set(chronological)
         Path(path).parent.mkdir(parents=True, exist_ok=True)
         self.db = sqlite3.connect(path)
         self.db.executescript('''
@@ -152,7 +154,7 @@ class Cache:
         with self.db:
             self.db.execute("INSERT OR IGNORE INTO jobs(entity,start,end,block) VALUES(?,?,?,?)", (entity, start, end, block))
         cursor, done, block = self.db.execute("SELECT cursor,done,block FROM jobs WHERE entity=? AND start=? AND end=?", (entity, start, end)).fetchone()
-        chronological = entity in EVENTS
+        chronological = entity in self.chronological
         if chronological:
             with self.db:
                 self.db.execute("UPDATE jobs SET mode='time', legacy_floor=cursor, cursor='', time_cursor=start "
@@ -181,11 +183,11 @@ class Cache:
             else:
                 where = f'id_gt: {json.dumps(cursor)}' if cursor else ''
                 order = 'id'
-            query = f'{{ {entity}(first: {page_size}, orderBy: {order}, orderDirection: asc, block: {{number: {block}}}, where: {{{where}}}) {{ {FIELDS[entity]} }} }}'
+            query = f'{{ {entity}(first: {page_size}, orderBy: {order}, orderDirection: asc, block: {{number: {block}}}, where: {{{where}}}) {{ {self.fields[entity]} }} }}'
             try:
                 rows = client.query(query).get(entity)
             except RuntimeError as exc:
-                if entity not in EVENTS or "missing block:" not in str(exc):
+                if entity not in self.chronological or "missing block:" not in str(exc):
                     raise
                 if snapshot_recoveries >= 3:
                     raise RuntimeError("Snapshot recovery failed 3 times without page progress; "
@@ -358,6 +360,8 @@ def main(argv=None, default_config=None, default_env=None, default_log=None):
     parser.add_argument("--env-file", type=Path, default=default_env)
     parser.add_argument("--max-requests", type=int, default=0, help="Hard HTTP attempt budget, including retries; default disables live queries")
     parser.add_argument("--free-access-confirmed", action="store_true", help="Confirm account free capacity covers this budget and paid overage is disabled")
+    parser.add_argument("--include-supplementary", action="store_true", help="Collect supported simulator events/history separately after schema verification")
+    parser.add_argument("--supplementary-only", action="store_true", help="Only supplementary collection; avoid core/account refresh")
     parser.add_argument("--market", type=market_name, default=None)
     parser.add_argument("--start-date", help="Inclusive ISO date/time (UTC); default: all history")
     parser.add_argument("--end-date", help="Inclusive calendar date, or exclusive ISO instant; default: now")
@@ -367,6 +371,10 @@ def main(argv=None, default_config=None, default_env=None, default_log=None):
     parser.add_argument("--retries", type=int, default=8)
     args = parser.parse_args(argv)
     config = read_config(args.config)
+    legacy = Path(config["CACHE_DIR"]) / "data_collection"
+    shared = Path(config["COLLECTION_CACHE_DIR"]) / "data_collection"
+    if legacy.exists() and legacy.resolve() != shared.resolve() and any(legacy.glob("aave_v3/*/*/raw.sqlite3")):
+        parser.error("Legacy collection cache exists: migrate it to TRANSACTIONS_PATH/.cache/data_collection before collecting; refusing an empty replacement cache")
     load_api_key(args.env_file)
     if args.max_requests <= 0 or not args.free_access_confirmed:
         parser.error("Live collection disabled: establish free capacity and disabled paid overage, then supply --free-access-confirmed --max-requests N. Use aave-cache-audit offline.")
@@ -387,6 +395,16 @@ def main(argv=None, default_config=None, default_env=None, default_log=None):
     log_path, log_handler = configure_logging(market, Path(args.log_dir or config["LOG_DIR"]))
     tqdm.write(f"Detailed collection log: {log_path}")
     client = Client(endpoint, args.retries, max_requests=args.max_requests)
+    from .shared_cache import collection_lock
+    try:
+        with collection_lock(Path(config["COLLECTION_CACHE_DIR"]), market):
+            return run_collection(args, config, market, start, end, requested_end, client)
+    finally:
+        LOGGER.removeHandler(log_handler)
+        log_handler.close()
+
+
+def run_collection(args, config, market, start, end, requested_end, client):
     meta = client.query("{ _meta { deployment hasIndexingErrors block { number timestamp } } }")["_meta"]
     if meta["hasIndexingErrors"]:
         raise RuntimeError("Subgraph reports indexing errors; refusing to cache incomplete results")
@@ -394,15 +412,20 @@ def main(argv=None, default_config=None, default_env=None, default_log=None):
     # Never certify an unindexed interval. Exclude the tip second until the next run.
     end = min(end, int(meta["block"]["timestamp"]))
     if start >= end:
-        parser.error("Requested start is beyond the available indexed data")
+        raise ValueError("Requested start is beyond the available indexed data")
     namespace = hashlib.sha256(meta["deployment"].encode()).hexdigest()[:16]
-    cache_dir = Path(config["CACHE_DIR"]) / "data_collection" / "aave_v3" / market / namespace
-    if not (cache_dir / "raw.sqlite3").exists() and not args.allow_new_source:
+    cache_dir = Path(config["COLLECTION_CACHE_DIR"]) / "data_collection" / "aave_v3" / market / namespace
+    if not args.supplementary_only and not (cache_dir / "raw.sqlite3").exists() and not args.allow_new_source:
         if any(cache_dir.parent.glob("*/raw.sqlite3")):
             raise RuntimeError("Different source deployment detected; refusing to silently select an empty cache. Verify source identity and use --allow-new-source if intended.")
     tx_metadata = dataset_path(config, "transactions", market).with_suffix(".metadata.json")
-    if tx_metadata.exists() and json.loads(tx_metadata.read_text()).get("deployment") != meta["deployment"]:
+    if not args.supplementary_only and tx_metadata.exists() and json.loads(tx_metadata.read_text()).get("deployment") != meta["deployment"]:
         raise RuntimeError("Output belongs to a different source deployment; choose separate output directories")
+    if args.include_supplementary or args.supplementary_only:
+        from .indexed_supplementary import collect_supplementary
+        collect_supplementary(client, config, market, meta, start, end, requested_end, args.page_size)
+    if args.supplementary_only:
+        return
     cache = Cache(cache_dir / "raw.sqlite3")
     try:
         for entity in EVENTS:
@@ -435,8 +458,6 @@ def main(argv=None, default_config=None, default_env=None, default_log=None):
         raise
     finally:
         cache.db.close()
-        LOGGER.removeHandler(log_handler)
-        log_handler.close()
 
 
 if __name__ == "__main__":

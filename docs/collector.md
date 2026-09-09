@@ -34,8 +34,10 @@ collection; each export contains the requested transaction interval. Expanding o
 shrinking the interval retains cached history. Transaction ordering is by event
 type then timestamp/ID; the analysis loader sorts chronologically.
 
-`CACHE_DIR` remains the shared cache root. Collection uses
+`TRANSACTIONS_PATH/.cache` is the shared collection cache root. Collection uses
 `data_collection/aave_v3/<market>/<subgraph-deployment>/raw.sqlite3` beneath it.
+`CACHE_DIR` is reserved for other research caches. See the README for supplementary
+flags, schema checks and migration from the old project-local collection subtree.
 Raw pages and cursors commit in one SQLite transaction. Chronological pagination uses a `(timestamp, ID)` cursor within the requested
 interval, preserving events sharing a timestamp. Completed
 intervals (including empty intervals) are reused; interrupted intervals resume
