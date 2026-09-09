@@ -1,0 +1,7 @@
+{
+  "CACHE_DIR": "./cache",
+  "LOG_DIR": "./log",
+  "TRANSACTIONS_PATH": "./output",
+  "USERS_PATH": "./output",
+  "AAVE_MARKET": "polygon"
+}

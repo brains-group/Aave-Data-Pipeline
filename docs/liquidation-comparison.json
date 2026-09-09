@@ -1,0 +1,19 @@
+{
+  "source": "/home/spadef/data/IDEA_DeFi_Research/Data/Lending_Protocols/Aave/V3/Polygon/transactionsFinSurvival.csv",
+  "source_bytes": 2239447906,
+  "source_mtime_ns": 1765646271497432592,
+  "cache": "/home/spadef/craft-soc/codes/cache/data_collection/aave_v3/polygon/5a19507ddc6a0f4b/raw.sqlite3",
+  "historical_counts": {
+    "borrow": 1281755,
+    "deposit": 3224319,
+    "withdraw": 3108933,
+    "liquidation": 39023,
+    "repay": 1183409
+  },
+  "liquidation_rows": 39023,
+  "unique_liquidation_ids": 39023,
+  "matched": 39022,
+  "missing": 1,
+  "http_attempts": 0,
+  "cause": "unresolved for missing IDs; never merged into cache"
+}

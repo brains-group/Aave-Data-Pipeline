@@ -1,0 +1,45 @@
+{
+  "healthy_margin": {
+    "before": {
+      "total_collateral_usd": 100.0,
+      "total_debt_usd": 78.0,
+      "available_borrows_usd": 0.0,
+      "health_factor": 1.0256410256410255,
+      "effective_liquidation_threshold": 0.8
+    },
+    "requested_debt_cover": 10,
+    "status": "executed",
+    "after": {
+      "total_collateral_usd": 89.5,
+      "total_debt_usd": 68.0,
+      "available_borrows_usd": 0.0,
+      "health_factor": 1.0529411764705883,
+      "effective_liquidation_threshold": 0.8
+    }
+  },
+  "excess_cover": {
+    "before": {
+      "total_collateral_usd": 100.0,
+      "total_debt_usd": 90.0,
+      "available_borrows_usd": 0.0,
+      "health_factor": 0.8888888888888888,
+      "effective_liquidation_threshold": 0.8
+    },
+    "requested_debt_cover": 900,
+    "status": "executed",
+    "after": {
+      "total_collateral_usd": 0.0,
+      "total_debt_usd": -5.238095238095241,
+      "available_borrows_usd": 5.238095238095241,
+      "health_factor": -0.0,
+      "effective_liquidation_threshold": 0.0
+    }
+  },
+  "above_ltv_borrow": {
+    "status": "executed",
+    "debt": 76.0
+  },
+  "inferred_wallet": {
+    "USD": 5.0
+  }
+}

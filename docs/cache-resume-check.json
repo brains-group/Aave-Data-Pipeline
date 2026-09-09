@@ -1,0 +1,15 @@
+{
+  "copied_job_count": 1692,
+  "entities": [
+    "borrows",
+    "deposits",
+    "withdraws",
+    "repays",
+    "liquidates"
+  ],
+  "start_inclusive": 0,
+  "end_exclusive": 1788897090,
+  "network_calls": 0,
+  "source_cache_modified": false,
+  "scope": "Copied real jobs and one payload per entity; complete interval resume, not full export validation"
+}

@@ -1,0 +1,7 @@
+id,type,timestamp,user,reserve,amount,amountUSD,liquidatee,liquidator
+d1,deposit,10,u,ETH,2,4,,
+d2,deposit,20,u,ETH,3,6,,
+b1,borrow,20,u,USD,1,1,,
+l1,liquidation,30,,USD,1,1,u,other
+d3,deposit,60,u,ETH,4,8,,
+x,flashloan,15,u,ETH,900,1800,,

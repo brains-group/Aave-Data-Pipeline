@@ -1,0 +1,1010 @@
+{
+  "craft-soc": {
+    "revision": "04f5043510ae0ea4d735aab33f9ea671be3b886e",
+    "files": [
+      {
+        "path": ".gitignore",
+        "sha256": "ec080706ae49ab10bb72863e3bcb3af85849edba09c5e489a386baecbf4cceb6"
+      },
+      {
+        "path": "sample.env",
+        "sha256": "802a869ea7470773c0ad7c4c3726950e3ac439219b06e36d1352968b34a7e070"
+      },
+      {
+        "path": "README.md",
+        "sha256": "5399745bb22859c72e79f5f7935f3ea6e58618de45e0567a08c5bfd197fb0397"
+      },
+      {
+        "path": "requirements.txt",
+        "sha256": "8bb7482ae469a83970fa69da060e27d12d435573720fad0154341c76237cddc7"
+      },
+      {
+        "path": "run_all.py",
+        "sha256": "6eac728ecf96d0cb1b0f655a786924afef8db6aab9a57216bd173e705ae5cc2e"
+      },
+      {
+        "path": "figures/predictive_tournament_AAVE_final.pdf",
+        "sha256": "53aecaf4671c217c71f19f4bddd7c70120d22edf2e02f95e189075634217e8ce"
+      },
+      {
+        "path": "figures/predictive_tournament_WPOL_final.pdf",
+        "sha256": "67abfd50b8ef28aba557bf8899afcc82f3756eb96ec15be48f9dbf2aa90bc9f1"
+      },
+      {
+        "path": "figures/cross_layer_lead_lag_volume.pdf",
+        "sha256": "6856b054ef84458641c3b66843146871ede419ed937767c3a034940d410061bf"
+      },
+      {
+        "path": "figures/cross_layer_lead_lag.pdf",
+        "sha256": "84e0ed1799c67ab9fe3b41828eeaabf74ab8c4ca7e16616c5b4220d8708b980e"
+      },
+      {
+        "path": "figures/timeseries_virality_vs_liquidations_dynamic.pdf",
+        "sha256": "248f5188de734dab588fb0c1edb834a5767fc43926610d9e5c5b0eed6b08d244"
+      },
+      {
+        "path": "figures/predictive_tournament_summary_final.pdf",
+        "sha256": "81f8ad28f5bc23b1709e71b3b06b922b2cf5f5ac217039372585ecbdbd5fbccb"
+      },
+      {
+        "path": "figures/cross_layer_lead_lag_virality.pdf",
+        "sha256": "8ab8ec6ed5f397dd1a5ff26d59e324cec3b0309928fd09da2c6c09da5b1f590d"
+      },
+      {
+        "path": "figures/cross_layer_lead_lag_alpha.pdf",
+        "sha256": "e2d98c39438370cc8c41554c9b3615739b463f5dda1456485446df2810f2fde2"
+      },
+      {
+        "path": "figures/aggregate_roi_sharpe.pdf",
+        "sha256": "bceb6b89087518f925ea37ba35ccfdf6f6a26fb4fd48c51ba715b8b367f89edc"
+      },
+      {
+        "path": "figures/predictive_tournament_wstETH_final.pdf",
+        "sha256": "0958a8306b55071e9c1decd5af658060c8452f3eb62c8a31c3dde9a8f9954d01"
+      },
+      {
+        "path": "figures/xmin_robustness.pdf",
+        "sha256": "f69526d96c76f2f267799f878c19ee2824e1fbd85a7b9afabc72a357ff159d98"
+      },
+      {
+        "path": "figures/per_token_roi.pdf",
+        "sha256": "ca8b2023ec9e12187a94f8b4eac75a823b53de149671f9e2ee61e6ead564121e"
+      },
+      {
+        "path": "figures/case_study_CRV.pdf",
+        "sha256": "e492b78a0af7efcaaa0c0aaa9a857c0da94ad8e5bfcf9f7869bd31dc0f1291f6"
+      },
+      {
+        "path": "figures/predictive_tournament_WBTC_final.pdf",
+        "sha256": "5d8e9d7ef5a418bb52cc6293e3a8d350a15e3089eaa9e9661890e560edce983c"
+      },
+      {
+        "path": "figures/micro_k_sensitivity.pdf",
+        "sha256": "710b8cc483bbab686247b3711586cee5b140b346624bc15d95528a88a0d54bd9"
+      },
+      {
+        "path": "figures/equity_curves.pdf",
+        "sha256": "fc16be4eea3a688a678b71dac6b70eb954774e0281c563e1bc5e03ebf3a59774"
+      },
+      {
+        "path": "figures/predictive_tournament_WETH_final.pdf",
+        "sha256": "1760c6c3c2ff7fc121091b0f654105bc381aadc333db4c9e29bec63f3103612c"
+      },
+      {
+        "path": "figures/case_study_WETH.pdf",
+        "sha256": "a554db143bdd2aab9b36d75a85256520e0646d5eaf20e95591d872009acaa9dd"
+      },
+      {
+        "path": "figures/predictive_tournament_SUSHI_final.pdf",
+        "sha256": "96bde33db96c090e0bcd55d3df23a8a88795cb36cdea81809fe4d20724c19057"
+      },
+      {
+        "path": "figures/onchain_timeseries_fragility_vs_liquidations.pdf",
+        "sha256": "02a9bdb0fb2bae516242a31c1acba842e02f2f7c5638da9ca18d1eb17e361979"
+      },
+      {
+        "path": "figures/onchain_lead_lag_correlation.pdf",
+        "sha256": "d4ff66e5eece907a6ae031f1a670a8bee0f4b4c96952d64746c8856c8abf0df4"
+      },
+      {
+        "path": "figures/predictive_tournament_DPI_final.pdf",
+        "sha256": "a26802f653f502d9e19638de208caa79a3339e46403803a50686fd8ce88e482a"
+      },
+      {
+        "path": "figures/predictive_tournament_CRV_final.pdf",
+        "sha256": "fa46ff30bcfc928be49cd6c4ab86629108369d365824a9999b91135607a02994"
+      },
+      {
+        "path": "figures/predictive_tournament_MaticX_final.pdf",
+        "sha256": "e6bff7b536b5a81bf46f24cc1403fa9083b76849dd0944b2abec8938a17e4e53"
+      },
+      {
+        "path": "figures/case_study_DPI.pdf",
+        "sha256": "00763d6740f6621c564fe41db36b465b36cc96adc204655526692db78ac6e3f4"
+      },
+      {
+        "path": "figures/per_token_tournament.pdf",
+        "sha256": "812dddcf0ed3323b66f17e987b23aba16c5059e5baab37b91c80ac18dbffaf48"
+      },
+      {
+        "path": "figures/validation_timeseries.pdf",
+        "sha256": "f268ed424361ae8a48783431c48beeb102bb590f111098c2226b838db2e18cfe"
+      },
+      {
+        "path": "figures/predictive_tournament_GHST_final.pdf",
+        "sha256": "790dc7d2709b17bce8ae64ad60fb251a55ebaebff8c592795bb5889bc6489431"
+      },
+      {
+        "path": "figures/recsys_feature_importance.pdf",
+        "sha256": "c671d28faa33ff250e30d70fa06c609f8f9117b05a82bf48194e134fdcc338e4"
+      },
+      {
+        "path": "figures/recsys_k_sensitivity.pdf",
+        "sha256": "5ad8a8badfeaecd34ad8e7fe9b9254dad2cfece427cdd04f18d8d2e4be3eb796"
+      },
+      {
+        "path": "figures/case_study_WBTC.pdf",
+        "sha256": "4c74b2c4e7666be1919ac5f003fc99d36554bbc6ebe9706c87d6c4570af8fab3"
+      },
+      {
+        "path": "figures/predictive_tournament_LINK_final.pdf",
+        "sha256": "e1f12bf106137f961e1002ca00f0884e426ac600a8e3ff8d38e85d588fbbbbca"
+      },
+      {
+        "path": "figures/aggregate_portfolio_scoreboard_final.pdf",
+        "sha256": "f78a9ac542cb688004dc4ed461b5d5864e2089451a427e85e77483049150ac3f"
+      },
+      {
+        "path": "figures/aggregate_scoreboard.pdf",
+        "sha256": "b7d8bb8b9b44afe56c0f1079d42895415816f6f3e114037aa26a6903d7c668d7"
+      },
+      {
+        "path": "figures/micro_k_selection.pdf",
+        "sha256": "f94e53fb01037820d1b5e5dd340e44528a9f0835ff7c780663d45f27cc2bc6e2"
+      },
+      {
+        "path": "figures/predictive_tournament_stMATIC_final.pdf",
+        "sha256": "81faac51559b5f1be21f8529adcfb225d8b4baa32ded54f1d38e69ee95ce79e6"
+      },
+      {
+        "path": "figures/validation_leadlag.pdf",
+        "sha256": "043c4d69fe263e2b5999cad4cae096fb1b9339012871226387b31b041ee6546a"
+      },
+      {
+        "path": "figures/validation_heatmap.pdf",
+        "sha256": "3433dbb70835326c5f755db39c75c90ae95062ff479c106d174e3fea9b8b4a7b"
+      },
+      {
+        "path": "figures/aave_feature_heatmap.pdf",
+        "sha256": "3bb35d1010266b249792348a8a862eb7b5813970483edee699724929a38ee9ae"
+      },
+      {
+        "path": "figures/micro_feature_importance.pdf",
+        "sha256": "0b47926d5ae529e95db8c9fe77f2e47e8c3bb6bd2893e47b2c2301d9f8051e34"
+      },
+      {
+        "path": "figures/predictive_tournament_BAL_final.pdf",
+        "sha256": "450f4ac67497b77df007528dc9330a10d5d2c5b66688f57e6555d9caf9c8c369"
+      },
+      {
+        "path": "codes/sample.config.json",
+        "sha256": "7f23bff56bd628e654e6b4d18067418099aa88ad56e4bca1f9353d8ad78c35ca"
+      },
+      {
+        "path": "codes/backtest.py",
+        "sha256": "ac4019d0d07039aa153804d37c435c27e1b97bc94f308c78f15df1fb1bfa4b2f"
+      },
+      {
+        "path": "codes/run_detection.py",
+        "sha256": "3e763b40ffde1d6ab52db1e40bbf399078fe107c923babbced993bdd75485892"
+      },
+      {
+        "path": "codes/metrics.py",
+        "sha256": "7738d44eefce0cc64e537a76ed5e0cb928ac2f20ef9fdafa56dd78291a767f15"
+      },
+      {
+        "path": "codes/cascade.py",
+        "sha256": "a6904b14823a0d224ffd79930aa2877bb384ea2b777fa2c752d6ef7c0e003f59"
+      },
+      {
+        "path": "codes/soc.py",
+        "sha256": "557b3c63c0c26f9c962987ba3584d64751f1828dee97fa3a6d24b172f07be3c7"
+      },
+      {
+        "path": "codes/datasets.py",
+        "sha256": "e3bd79d3d7d2ed476d1f57e677b4b5f9f7486a58e4d96183790d1b0a3a37ebc0"
+      },
+      {
+        "path": "codes/data.py",
+        "sha256": "179bffb5846965295ccf8b883caac0bb995a3d653bade903bc6357170b35680d"
+      },
+      {
+        "path": "codes/run_task_a.py",
+        "sha256": "775f273017964c3a6a657eac42aef51fe5b391a3dbddf38d57ff7072a98a03da"
+      },
+      {
+        "path": "codes/strategies.py",
+        "sha256": "9876adf0ca607f99f81030e997c1fdd891d4cba6869d7bfd27dcf66eafc79c69"
+      },
+      {
+        "path": "codes/analysis.py",
+        "sha256": "9a8c308f5e73105806ae096e6f3193a522809582d937423aa015e09dba19295b"
+      },
+      {
+        "path": "codes/plots.py",
+        "sha256": "1425e30aace79083dfc737dec5f0d567e60c2dc39a6c5de1cfd97c25ac768fb3"
+      },
+      {
+        "path": "codes/twitter_data_processor.py",
+        "sha256": "c85a2e950133f2d2bf28ef844efb767a14c7f2dd924a0793e18235cb137829f1"
+      },
+      {
+        "path": "codes/calibration.py",
+        "sha256": "867708e89c4fec9172b446ba27451e447cc55c075ac49625b806a60efb59f07a"
+      },
+      {
+        "path": "codes/check_figures.py",
+        "sha256": "2732b9601a1cbbca469cf56d1d4af08a0b9aff32a8109f716e86f77d45470d77"
+      },
+      {
+        "path": "codes/common.py",
+        "sha256": "2293907d0cbbc683544d3473e93f64c094af65bae08e582494bef6ed3249b785"
+      },
+      {
+        "path": "codes/_win_sweep.py",
+        "sha256": "664d4796f3d2731a392966f6ba009846b486a868b95f045290e04dff4eb365eb"
+      },
+      {
+        "path": "codes/data_collection/collect.py",
+        "sha256": "c8956be53c868538855c3530793f84dccb69ba2947cf3871660c3e020003545d"
+      },
+      {
+        "path": "codes/data_collection/test_collect.py",
+        "sha256": "713c241afeca46c860099ab703ff3a2665a4e4be0ee7f7cef13bad746599423c"
+      },
+      {
+        "path": "codes/data_collection/README.md",
+        "sha256": "291db4f65da872caebf0fe5f1f610750b5cc980a6d15cd824b7f2357bd2a9abd"
+      },
+      {
+        "path": "codes/data_collection/__init__.py",
+        "sha256": "bb7a85db08218aa5e862973bbf4ab4f45c79ec2182f2f32e2b1cfa8ab54ecf98"
+      }
+    ]
+  },
+  "Aave-Action-Recommender": {
+    "revision": "68b51b921b45b4c80e7c8cc81c4c6854e85f29f4",
+    "files": [
+      {
+        "path": ".gitignore",
+        "sha256": "202e4dd689ff2cf96c13eedbe3c285acd66636737198bc68827f519ce07fef1d"
+      },
+      {
+        "path": "analyze_simulation_results.py",
+        "sha256": "0925dfa040cbdd1811f790369909e6f0586c470597a78d18086815301c671d8b"
+      },
+      {
+        "path": "analyze_simulation_cache.py",
+        "sha256": "3b9c16c5b99c487ecb50138faa2c41002d2f176b2efef0a796f4cc6625704589"
+      },
+      {
+        "path": "requirements.txt",
+        "sha256": "f4e4d1baf10464f6f43df1ae12df545f43880d9bcf043e0531df0d7c0390af88"
+      },
+      {
+        "path": ".gitmodules",
+        "sha256": "5963bf0b0b2f07a1f2f6e1da2eb8a35390128eb8d26c5667acdc100c74cd336a"
+      },
+      {
+        "path": "debug_amount_sensitivity.py",
+        "sha256": "f7ca5a09d83a30b364303b63f854900eadaed79964e81fe3130e32cf5bd5bb74"
+      },
+      {
+        "path": "actionAgentTraining.py",
+        "sha256": "2702701cc1dfd8efb5429b3190adeaf49ca43c00231eff70991d090928e07f7d"
+      },
+      {
+        "path": "RUNNING_SIMULATIONS.md",
+        "sha256": "7054bb26d4d97229d3172b792f613e8612a34c4947a079e983d1f96ab9ffaccd"
+      },
+      {
+        "path": "sensitivity_analysis.py",
+        "sha256": "ccf65e538ec3b02a662ce96547ea7a9bd0310d7dc91c163ff049e62ef7891f2f"
+      },
+      {
+        "path": "README.md",
+        "sha256": "fb62980e4b1c6904b5c94fc1bcff91f065ef8261ca3538bb761cc4139b7c1da3"
+      },
+      {
+        "path": "ANALYZING_SIMULATION_RESULTS.md",
+        "sha256": "289c6a2ea62beebe32b28547ff8886acaaae9837344f34691439e7b79f461fd0"
+      },
+      {
+        "path": "performSimulations.py",
+        "sha256": "aa6f9d5a8f094a76ecf3742115246c97599f4bad0cd5cd734c298ca03968914b"
+      },
+      {
+        "path": "backup/directory.txt",
+        "sha256": "8f0c24bbc19681e874a9582e8cd8fd7d1ba01b3804038789e51ba2bafef45b1f"
+      },
+      {
+        "path": "backup/processing_directory.txt",
+        "sha256": "4900d8c559d5339d7679d26cb820a26fba4dd7a30ed15d2ab73ebfaa54404916"
+      },
+      {
+        "path": "utils/logger.py",
+        "sha256": "31cf4b11c08fdbc191f5d7c83e72b9d9ec603ce99f48307d6be244745919df82"
+      },
+      {
+        "path": "utils/data.py",
+        "sha256": "d2d6ee02ea8a3d57184d77eac9e7d9ad6b4b77bee63117aa20269729230bbd22"
+      },
+      {
+        "path": "utils/simulations.py",
+        "sha256": "d6001639f7ed642f8e8ecc5fe64c5aa04db01a0da7797cdecd9268b6ea4909fa"
+      },
+      {
+        "path": "utils/model_training.py",
+        "sha256": "28befc05ad4f41ad832b2d2df7ea6d75564802f02d4bac4e5031caa66ce05ffb"
+      },
+      {
+        "path": "utils/constants.py",
+        "sha256": "8fd02dd1f7b2658b31592fe2e65abea4a534d4408d51130ae276da6ca545659e"
+      },
+      {
+        "path": "docs/GIT_SUBMODULE.md",
+        "sha256": "53cc46100fa2ab930150c5c3226288f2a451ce98ad2a870521af929a617de756"
+      },
+      {
+        "path": "ACM_DLT_Journal_DeFi_Lending_Recommendations/Cover Letter.tex",
+        "sha256": "a0040590d78ec3da73400086742b2902ea668b401f0b3e3f6d37ce3266124535"
+      },
+      {
+        "path": "ACM_DLT_Journal_DeFi_Lending_Recommendations/acm-jdslogo.png",
+        "sha256": "539a878e7d7b5442591def37a29eca693dde3a789cc9f3b83c0f1aa117898219"
+      },
+      {
+        "path": "ACM_DLT_Journal_DeFi_Lending_Recommendations/paper.tex",
+        "sha256": "3bc590088a5bcd7f6fa1e2082e9bc9438bbdb621e44e95f4797a95f73343cc8a"
+      },
+      {
+        "path": "ACM_DLT_Journal_DeFi_Lending_Recommendations/README.txt",
+        "sha256": "31d75072d8e308e84c2773754bdb0ad422f3c24b3275c3c9b8bcb1adac58a4de"
+      },
+      {
+        "path": "ACM_DLT_Journal_DeFi_Lending_Recommendations/references.bib",
+        "sha256": "2c933b148df12c575522db0586f5541756844dfab53fa3fa158174efa6eec0da"
+      },
+      {
+        "path": "ACM_DLT_Journal_DeFi_Lending_Recommendations/ACM_DLT_Journal_DeFi_Lending_Recommendations.pdf",
+        "sha256": "48a5dd4244bb1c70246ac60d77890a082e3f7d467f6416fc13e02abed9eaf3ef"
+      },
+      {
+        "path": "backup/cache-bak/analyze_recommendations.py",
+        "sha256": "8e4b65f8085941e09b4f63655e837c6eff675e0ed00c32811917804be05cb1b9"
+      },
+      {
+        "path": "backup/cache-bak/ACTION_PAIR_NON_SEQUENTIAL_ISSUE.md",
+        "sha256": "a399fd646233f3b8c2d6d85b24d508a648e67d860c6cb07fd16fbccd28a3859f"
+      },
+      {
+        "path": "backup/cache-bak/CODE_EXPLANATION.md",
+        "sha256": "2588c8d949da0643d7a5bc5e2d3334930353aa79b26134a51434c19aeb113f5c"
+      },
+      {
+        "path": "backup/cache-bak/analyze_missing_pairs.py",
+        "sha256": "f7f26b75d26e05946c75a8785e36c74cba561dd5aaf7cbf3fafa121bf5aefa6b"
+      },
+      {
+        "path": "backup/cache-bak/analysis_output/action_pair_analysis.png",
+        "sha256": "5e8dae9d2317b71fab110edcd0bd7725fbbad771521a71dc36bc53726cbf5ecd"
+      },
+      {
+        "path": "backup/cache-bak/analysis_output/detailed_analysis.txt",
+        "sha256": "f1a20bf2dfa9717cb09a26ea11d28cd438b0bc01568e302c7ca4eab98de0a1cb"
+      },
+      {
+        "path": "backup/cache-bak/analysis_output/simulation_cache_analysis.png",
+        "sha256": "fcda84ab05a6368efd78b7c86a1de7a7bda266e1e2a86a55e165636f9b38d15d"
+      },
+      {
+        "path": "backup/cache-bak/analysis_output/simulation_overview.png",
+        "sha256": "7b408f33f041a68a71f6a0027c18b140bb46c551ca9f2663a8581bf4d4cded88"
+      },
+      {
+        "path": "backup/cache-bak3/analysis_output/simulation_overview.png",
+        "sha256": "839c03e5a159746b72a73ee23fcd806b6b2f75861a9a6dbca510398476854119"
+      },
+      {
+        "path": "backup/cache-bak3/analysis_output/action_pair_analysis.png",
+        "sha256": "b9755813fd9533fe047d7fc133edc37d941439dcea148f308f16c4a9331cec1c"
+      },
+      {
+        "path": "backup/cache-bak3/analysis_output/simulation_cache_analysis.png",
+        "sha256": "07704d39299bc84a9f5e4316b4e767ead4f6f8a38d4bb9ff64658248538bec99"
+      },
+      {
+        "path": "backup/cache-bak4/analysis_output/simulation_overview.png",
+        "sha256": "899d482f453979f94874fa78bc08ff261809a6e7969a3f0aaf936c66acd1694d"
+      },
+      {
+        "path": "backup/cache-bak4/analysis_output/action_pair_analysis.png",
+        "sha256": "150c731634f86a4b1b2dfcacd3040ca1564a45cc06d6883d31c163248701904e"
+      },
+      {
+        "path": "backup/cache-bak4/analysis_output/risk_analysis.png",
+        "sha256": "b981ffb6ac3f951f49068c92e59896fa3dc2b5e152f16d3b94d71bc71131f127"
+      },
+      {
+        "path": "backup/cache-bak6/analysis_output/simulation_cache_analysis.png",
+        "sha256": "d7349abac1295ece30a2dfc5aa351788699331e5d38e75d203f3a484a5202c20"
+      },
+      {
+        "path": "backup/cache-bak6/analysis_output/simulation_overview.png",
+        "sha256": "899d482f453979f94874fa78bc08ff261809a6e7969a3f0aaf936c66acd1694d"
+      },
+      {
+        "path": "backup/cache-bak6/analysis_output/risk_analysis.png",
+        "sha256": "b981ffb6ac3f951f49068c92e59896fa3dc2b5e152f16d3b94d71bc71131f127"
+      },
+      {
+        "path": "backup/cache-bak6/analysis_output/action_pair_analysis.png",
+        "sha256": "150c731634f86a4b1b2dfcacd3040ca1564a45cc06d6883d31c163248701904e"
+      },
+      {
+        "path": "backup/cache-bak5/analysis_output/risk_analysis.png",
+        "sha256": "b981ffb6ac3f951f49068c92e59896fa3dc2b5e152f16d3b94d71bc71131f127"
+      },
+      {
+        "path": "backup/cache-bak5/analysis_output/action_pair_analysis.png",
+        "sha256": "150c731634f86a4b1b2dfcacd3040ca1564a45cc06d6883d31c163248701904e"
+      },
+      {
+        "path": "backup/cache-bak5/analysis_output/simulation_overview.png",
+        "sha256": "899d482f453979f94874fa78bc08ff261809a6e7969a3f0aaf936c66acd1694d"
+      },
+      {
+        "path": "ACM_DLT_Journal_DeFi_Lending_Recommendations/reviews/dlt-journal.txt",
+        "sha256": "75bb90effe8495f98b85ee2ec681444a853a4a394f39349a87e6a62d39ebdf7a"
+      },
+      {
+        "path": "ACM_DLT_Journal_DeFi_Lending_Recommendations/figures/liquidation_prediction_analysis.png",
+        "sha256": "656790aaeffee29487a73b79ca039b083b99d5f63163fc4acce4b6293ef0ae48"
+      },
+      {
+        "path": "ACM_DLT_Journal_DeFi_Lending_Recommendations/figures/effective_avoidance_rate_paper.pdf",
+        "sha256": "56e5de35c202f9e6f8c7dfad0e9ed6cbcc26bd79d2262590ad17b23fa73a19f7"
+      },
+      {
+        "path": "ACM_DLT_Journal_DeFi_Lending_Recommendations/figures/Overall_Diagram.pdf",
+        "sha256": "e8cec706e59bb651ee9ef33a12de4f9a48493728960c87b33db3a29da0c782b9"
+      },
+      {
+        "path": "ACM_DLT_Journal_DeFi_Lending_Recommendations/figures/user_category_analysis.png",
+        "sha256": "75aa8eb3f937e8a67a455fc6acbe73498a64d7dd755fe362cbcb197b0a59f660"
+      },
+      {
+        "path": "ACM_DLT_Journal_DeFi_Lending_Recommendations/figures/correlation_analysis_liquidation_focused.png",
+        "sha256": "a460747ee4b20186ffa9c35be0254ed1afa188293f7f16ff8f45d36a44eaad29"
+      }
+    ]
+  },
+  "Aave-Action-Recommender/Aave-Simulator": {
+    "revision": "be8a6f7bf66153ecc03b8c1f048fdcafb66a60e1",
+    "files": [
+      {
+        "path": "main.py",
+        "sha256": "1a7e6c4fa429ff33320509e2fc2fcea4d42879806c6089d0f44bd9c32ae33e7d"
+      },
+      {
+        "path": ".gitignore",
+        "sha256": "a1d293c84b5c82c0182aefda1c1e4e96edc0075a30981b8518ae579ad5f01b40"
+      },
+      {
+        "path": "README.md",
+        "sha256": "1b29320dc56b530a074c32c4d9a765cc0ac5debb1e91ec9e0d352711a4a70d41"
+      },
+      {
+        "path": "requirements.txt",
+        "sha256": "9974fd8d181a79f6fadd91a577446d3cc99ec3cd56d12e70472636876dc8dbb1"
+      },
+      {
+        "path": "data_loader/__init__.py",
+        "sha256": "b028885bb6297afcb21fa4aeb1ee56a223728f9e019a897eb633f638fb145da3"
+      },
+      {
+        "path": "data_loader/data_loader.py",
+        "sha256": "bb75b491a0d2961652513c4d245c042e038a6ea2bcf8498269d75cd186757a3c"
+      },
+      {
+        "path": "simulator/__init__.py",
+        "sha256": "861b3a9106fb98bda0f06fd0e3820b67e53090076e009d92a230587821b21661"
+      },
+      {
+        "path": "simulator/investigation_params.py",
+        "sha256": "a97a387e4e7f70c1e559827ca113d17e855a8289d353ae4abbb70953d772a4d6"
+      },
+      {
+        "path": "simulator/protocol.py",
+        "sha256": "5e5ade465de904db4c1e45c820eca27351e0dc1a35fbadf5341ced82b3dd0b0c"
+      },
+      {
+        "path": "simulator/reserve_config.py",
+        "sha256": "72409d67aa6e55321e59dfa500f9f03796bb5052d68e26fa9e1eb181bf48ee8e"
+      },
+      {
+        "path": "simulator/utils.py",
+        "sha256": "814463a7a019e2db8f687f120e1b0d10a62fbdc59900d8f55f89766af3ee31ea"
+      },
+      {
+        "path": "analysis/investigation.py",
+        "sha256": "cf2d89a9d758d54329094f1d9093171d1af61e61056e2a3e5c2b7170eb5916dc"
+      },
+      {
+        "path": "analysis/__init__.py",
+        "sha256": "2065d2d9df0274a8a0210f58384d057d3bac44ede9afcdd9d45f549f87745dbc"
+      },
+      {
+        "path": "analysis/accuracy.py",
+        "sha256": "ea24bff42d7088339f003ca8aff65a4c0418dcb2119d567817aea465b4f1db57"
+      },
+      {
+        "path": "analysis/transaction_sequence_extractor.py",
+        "sha256": "63098492181f144369bddabcce73438abaa7aca9c8b9a2f28523588b2b3dcf6c"
+      },
+      {
+        "path": "analysis/methods_comparison.py",
+        "sha256": "2284da88bcacbc1d0f5dd1c8db3b750eb41332b25014b1bf487798df3fd6a80a"
+      },
+      {
+        "path": "analysis/simulator_helpers.py",
+        "sha256": "01479382b1697c5b96761231e9f306ee1fa80ae73bb8e9b471c1e343004f6fc4"
+      },
+      {
+        "path": "analysis/comparison.py",
+        "sha256": "0ba4b1ff17ba32c730350788757d01ec988cb606ffc84c77ed9ab5f32be0f1c1"
+      },
+      {
+        "path": "analysis/risk_assessment.py",
+        "sha256": "416f01a0b9409d4e71ffedb02d352cf382fa78284c470ec1be698e5d32b1ac7e"
+      },
+      {
+        "path": "tools/analyze_zero_debt_liquidations.py",
+        "sha256": "23e25b9da494f5b6ce4396f5598ff082ed747bd5f4157867b95ca465e39371b0"
+      },
+      {
+        "path": "tools/generate_profiles.py",
+        "sha256": "092e7c088077e7d20abe0b3f249ed6c74b608b9aebab38b2f2aa40a81be68fe1"
+      },
+      {
+        "path": "tools/fetch_chain_data.py",
+        "sha256": "743bc036983a0a23ef15b0c6e45e013027db4986306cc94fe505ff6f1ab71797"
+      },
+      {
+        "path": "tools/retrieve_price_history.py",
+        "sha256": "8cc6be34356e243e747bc1bad3315ac3789605f1572371d32cd035ffb19f0e67"
+      },
+      {
+        "path": "tools/risk_assessment.py",
+        "sha256": "7e14c5c2e8343312319d9abe8be6b059dc497e5ad1018d25f402ecf2fcff64d2"
+      },
+      {
+        "path": "tools/generate_simulation_charts.py",
+        "sha256": "c2f8dc30177c23157fc4ca4f599eab798a278f36b2adb007288d3a9d7fb49556"
+      },
+      {
+        "path": "tools/regenerate_charts_from_json.py",
+        "sha256": "07da5c62d89a123887b9c3b93c3a94ed58339170d8badd4942dc175b30338106"
+      },
+      {
+        "path": "tools/liquidation_detection_strategies.py",
+        "sha256": "6c9a48c68d1aba2b3e76689a9db3a32bcc3a18a905aa683c18935a8a85eaa4f3"
+      },
+      {
+        "path": "tools/run_simulation.py",
+        "sha256": "aeb021f76e18e0436d85de72b0f023d5cd68a9d9993454b3efde1c33f5ff21cf"
+      },
+      {
+        "path": "tools/extract_liquidated.py",
+        "sha256": "6bd7be4827e15dbdf73f6b7ef31b3febae229bd885620aa46990b61d819860ef"
+      },
+      {
+        "path": "tools/extract_validation_statistics.py",
+        "sha256": "ca4dfde9c74c69a82505ffbdc6a68f380a817068df2a299ee4622bf0997e7d82"
+      },
+      {
+        "path": "tools/extract_non_liquidated.py",
+        "sha256": "2970baeb31c33c9e377bf56ac56b9b757537487cda1055b996840154aa64f1ee"
+      },
+      {
+        "path": "tools/utils.py",
+        "sha256": "8d86cfafe4ea52046dfe3a1657ca51d72b19624c826b07aa971df9e8ba2efcbb"
+      },
+      {
+        "path": "tools/run_single_simulation.py",
+        "sha256": "ef117efec5414c2116720357b2778dfaf64aaa3ef288a9eb61c5edc8f243fe46"
+      },
+      {
+        "path": "tools/validate_simulator.py",
+        "sha256": "7c6cc4ba2a2680281d693c7ce61b0530cc0bc63dfac55b225239a99b1fcace8e"
+      },
+      {
+        "path": "visualization/__init__.py",
+        "sha256": "19f8590e0dd6db3f84e08c6612169276ff0f7b91eac172ee92b60ca0ab279407"
+      },
+      {
+        "path": "visualization/simulation_visualizations.py",
+        "sha256": "0bca5c70cd1ea570ee3d25d59829bfa4d41bb557dc35c61f086df2a89e501681"
+      },
+      {
+        "path": "visualization/validation_visualizations.py",
+        "sha256": "e9fda9243d84b37c90f708edda47c28eb2a37aca3e0e7d148edf3e89ada584c4"
+      },
+      {
+        "path": "chain_data/thresholds.py",
+        "sha256": "ca4a73a5b402cae938a0edbb5f5a3d0b4c95aa8ef4f24064679a98f1f86f937a"
+      },
+      {
+        "path": "chain_data/fetchers.py",
+        "sha256": "9514f30adbce08eb86e130ace1dd2a74d25ede88c1d3e7ec773f8c786731d81a"
+      },
+      {
+        "path": "chain_data/subgraph.py",
+        "sha256": "11cbacfdcc7c4cf24e73d8659e7bb8d9c8c40999e17f0a74993425e56f11ba9b"
+      },
+      {
+        "path": "chain_data/__init__.py",
+        "sha256": "8a8281b77cd39ebb0e9c4c2d6c32a8eccba59424d6454aa7cd649b7102cbef2d"
+      },
+      {
+        "path": "chain_data/contracts.py",
+        "sha256": "5a74db5c7e50ca322d86a2e5bed43f3af3645c47e228b490763e08cb18e58019"
+      },
+      {
+        "path": "docs/SIMULATOR_VALIDATION_ANALYSIS.md",
+        "sha256": "893e0889e658829a96d590867cc7dd3abf56226f008163a1d799abd13375f218"
+      },
+      {
+        "path": "docs/PROFILE_GENERATION.md",
+        "sha256": "fd95eaceaf06be75eae4f86c02a32da404d808279009a85b774c35198a1d45cf"
+      },
+      {
+        "path": "docs/SIMULATOR_RUN_ANALYSIS.md",
+        "sha256": "1ca2727a5999fa6d501192707a5ceebd8e375f8fe29e2e1eecc34f3e755523a3"
+      },
+      {
+        "path": "docs/WALLET_INFERENCE_ANALYSIS.md",
+        "sha256": "c7ea158b8716867c2a762f5ba30f8cf19b012bee456e09a8673717e20e75a1e5"
+      },
+      {
+        "path": "docs/LIQUIDATION_THRESHOLD.md",
+        "sha256": "381858d77bdf14eaac5387c73dbccf8a1055f867054cd57a9900eba395dd630a"
+      },
+      {
+        "path": "docs/SIMULATOR.md",
+        "sha256": "a0d544578c424c9eb42690b940ce7cb5c8b938376016f827dbd333a9829fe6c5"
+      },
+      {
+        "path": "docs/HEALTH_FACTOR_GUIDE.md",
+        "sha256": "0dbddfee546540281a6f5c56946d414450dbb6a08d8ad389756bc1fe7b9266be"
+      },
+      {
+        "path": "docs/TRANSACTION_FEASIBILITY_EXPLANATION.md",
+        "sha256": "4a837dd275b62bbcf63102cf41b4235b4be7b21a9551f24bd775e6139482c9ca"
+      },
+      {
+        "path": "docs/CHAIN_DATA_FETCHING.md",
+        "sha256": "f9dd5c54001c8b7a7b2e2dcb2168b5ce1dff647934d8ce3363e06b64a5156ecc"
+      },
+      {
+        "path": "docs/README.md",
+        "sha256": "7631d64d5c3ef8d92cc40d40162ddd7b94dfff34d3485dbb48b5bbff596d1937"
+      },
+      {
+        "path": "docs/DEBT_COLLATERAL_TRACKING.md",
+        "sha256": "d037e7a8f08407b964417dd04760e75b2874dee853de2e0525a4b472b6574f99"
+      },
+      {
+        "path": "docs/LIQUIDATION_DETECTION_STRATEGIES.md",
+        "sha256": "c74709186b1d7877153b98ff8421014ca1cf65db36a15bc08135f64b5e14bbc4"
+      },
+      {
+        "path": "docs/DATA_STRUCTURE_ANALYSIS.md",
+        "sha256": "46267e03817db74b7dd437c27d7d8608cd66427d2c070295122d508687c00f19"
+      },
+      {
+        "path": "docs/ARCHITECTURE.md",
+        "sha256": "98792ac6255d9f9020f459b45bd8887c456a2d12942901d591361fb884c024cc"
+      },
+      {
+        "path": "docs/SIMULATOR_VALIDATION.md",
+        "sha256": "40bda5ee055bf2fb2b04e7c8a75a63de5c3261117b3362a3289a2ae917fef5af"
+      },
+      {
+        "path": "docs/PRICE_HISTORY.md",
+        "sha256": "127cd02ee82572bba6082b678bf32bd1a687fdb1ca67561f0157ce275842be15"
+      },
+      {
+        "path": "profile_gen/wallet_inference.py",
+        "sha256": "34629666c41ba45ac5c70bc263916913608911da9dd8572be6deede95a83a435"
+      },
+      {
+        "path": "profile_gen/utils.py",
+        "sha256": "10e0945b0ac725e66571ca54b79076a98dcb6592785a9f61d1b0d04f54d7edb8"
+      },
+      {
+        "path": "profile_gen/__init__.py",
+        "sha256": "b35c6feefbcff14951d2032053245be5cd0b2b04cf8b304e0a75abf21dad4ef1"
+      },
+      {
+        "path": "profile_gen/user_profile_generator.py",
+        "sha256": "744699c4a825786af553468fe99e964cc05ae13216c8b8985394e580ebaf9f22"
+      },
+      {
+        "path": "scripts/README.md",
+        "sha256": "2d4be5942bbd33bf7c10923f5b3802ca0a753c7a0068bcadc5ea5511e64d094e"
+      },
+      {
+        "path": "market/market_conditions_simulator.py",
+        "sha256": "ad18bbf5dfea2528d681d8051338f4c56c0351f0630651c77cbe53649ea574af"
+      },
+      {
+        "path": "market/__init__.py",
+        "sha256": "ec0c3ee26bb89b5bd19dc3e17e5fc7186ae2d749be94711c39b622d240d1a702"
+      },
+      {
+        "path": "market/price_extraction.py",
+        "sha256": "4c739d20edca93172fb5d6287e6a7d459ad01bd89ae148ec46cb2ddacb43d38e"
+      },
+      {
+        "path": "docs/charts/validation/category_transaction_patterns_liquidation-focused.png",
+        "sha256": "acb839d3fe8243a2bd01e5de152fb6af18357f985550865a171d22351caa3de6"
+      },
+      {
+        "path": "docs/charts/validation/correlation_analysis_chronological.png",
+        "sha256": "7c65a8ff0af94b63b62bf2ddc8ef2c1c4dfe49bdc35a5bb35d5c33f8bdafca14"
+      },
+      {
+        "path": "docs/charts/validation/debt_to_cover_analysis_chronological.png",
+        "sha256": "fd34b9c4e3ad108edb0d7084fd38fddcbda2e9ca06db66f5be787d90fd7501fc"
+      },
+      {
+        "path": "docs/charts/validation/category_performance_analysis_liquidation-focused.png",
+        "sha256": "aad3ce2d5c1f49b4ad05525622df0f01e43f761de8dcfd9b27aa6d985162a003"
+      },
+      {
+        "path": "docs/charts/validation/correlation_analysis_liquidation-focused.png",
+        "sha256": "77266730f57c010430e9ac4493a19a8968e22f53f13adc78a6ade76e83176814"
+      },
+      {
+        "path": "docs/charts/validation/category_risk_stratification_liquidation-focused.png",
+        "sha256": "6ab82930e8b0ca5feedf8670e526b57c2c5c8384f1a1c2b78d9ef03185a7e0dd"
+      },
+      {
+        "path": "docs/charts/validation/transition_matrix_chronological.png",
+        "sha256": "671083609d373dcd901dc9615c7e894011b38c8bb0a08fc065358337b59f054c"
+      },
+      {
+        "path": "docs/charts/validation/transaction_failure_analysis_liquidation-focused.png",
+        "sha256": "c8f9afb627aa58227b9c6c115cc1091fe4dca73e068e6aa6871e0fe1942b9b73"
+      },
+      {
+        "path": "docs/charts/validation/debt_to_cover_analysis_liquidation-focused.png",
+        "sha256": "0140a87e0f41b00ffabda9d6bd33c2020028dc66c3b4ff2ef197f0b2f5219054"
+      },
+      {
+        "path": "docs/charts/validation/dynamic_margin_analysis_chronological.png",
+        "sha256": "6c246e020d897590cb17cf521d0b1e171e12e6f74ba9d19a3021a98cd1829732"
+      },
+      {
+        "path": "docs/charts/validation/category_performance_analysis_chronological.png",
+        "sha256": "5e9609acc0b77c806b823b35e9aaa56a0c64e1f549c424df0b03de89b7bbfe67"
+      },
+      {
+        "path": "docs/charts/validation/dynamic_margin_analysis_liquidation-focused.png",
+        "sha256": "0b4d99c875dd604f999bc715b7adfdf483c1199c23e6bdb2a306966ec4baff52"
+      },
+      {
+        "path": "docs/charts/validation/effective_threshold_analysis_chronological.png",
+        "sha256": "5b127c93e3665eb96cc01aa4c74b072b497c0d9d16fb503e4ed144471cc1916c"
+      },
+      {
+        "path": "docs/charts/validation/transaction_failure_analysis_chronological.png",
+        "sha256": "c8f9afb627aa58227b9c6c115cc1091fe4dca73e068e6aa6871e0fe1942b9b73"
+      },
+      {
+        "path": "docs/charts/validation/category_risk_stratification_chronological.png",
+        "sha256": "1feb8cf2dce45d5960a55ebd09df2bd2a38bca99e2766a52406217e757a1ec03"
+      },
+      {
+        "path": "docs/charts/validation/category_transaction_patterns_chronological.png",
+        "sha256": "49e42cd7be05f1acff1635b1bb77abede4a08f725b153b669c34ab8adec80c1f"
+      },
+      {
+        "path": "docs/charts/validation/dust_regular_analysis_chronological.png",
+        "sha256": "6e9038c3f4ee8e927d4fc0a3d5c53d2818a3c6359621997294c5b422b3f5f24a"
+      },
+      {
+        "path": "docs/charts/validation/transition_matrix_liquidation-focused.png",
+        "sha256": "48387267ba9d164fb6668a46c752465c784a091ca96252ce493d090fb55c2798"
+      },
+      {
+        "path": "docs/charts/validation/dust_regular_analysis_liquidation-focused.png",
+        "sha256": "04b177fef54ab4cf2858f86b9cff46d368ee2d5a240785ce1a9dfa39beb5c89b"
+      },
+      {
+        "path": "docs/charts/validation/effective_threshold_analysis_liquidation-focused.png",
+        "sha256": "988a2b4b6f28ea34907a6e73f994a1669d89750ad753a551f9aa8faeb4bda4b2"
+      },
+      {
+        "path": "docs/charts/validation/liquidation_comparison_chronological.png",
+        "sha256": "51044bf1aebf46d359035ca3b8a95f95309dc81f480a2a4c06679766c378c5e0"
+      },
+      {
+        "path": "docs/charts/validation/liquidation_comparison_liquidation-focused.png",
+        "sha256": "1e361249da7bd4d5af3722a013cac8e7c6a94bbbe461443ff40a580621f439aa"
+      },
+      {
+        "path": "docs/charts/simulation/user_PowerUser_graph.png",
+        "sha256": "aebf6f673272fadb6974527930232a49434cf98ffb39e41650ba699b2b09ed38"
+      },
+      {
+        "path": "docs/charts/simulation/user_NewEntrant_graph.png",
+        "sha256": "6fa7d97b3dc9176591136125a82fa0a1ebf2d5bdcb26f0698f2da42e6236c45b"
+      },
+      {
+        "path": "docs/charts/simulation/user_LeverageSeeker_graph.png",
+        "sha256": "ca262a1c1d6911d0cbe90c5ae65bbe50cb53eb28090502ba8fa498066b3f1c91"
+      },
+      {
+        "path": "docs/charts/simulation/user_activity_graph.png",
+        "sha256": "bfda2cf2d14254740362ffe0d110706dfb2b2cf41b336c8ca3cbe73f4c0e40f4"
+      }
+    ]
+  },
+  "DMLR_DeFi_Survival_Benchmark": {
+    "revision": "c0500e7092b3343106b9a706634e3f9a7b275c02",
+    "files": [
+      {
+        "path": "dataPreprocessing.R",
+        "sha256": "b34dee13b1f6eb7897504beddffbebda2bc5f06edfdb5431c2b212bac74a3e63"
+      },
+      {
+        "path": "README.md",
+        "sha256": "d6d7a62ec78cc088dfd261900d4b8674cf92be6e97c8d454f685889dc40c07e4"
+      },
+      {
+        "path": "dataLoader.R",
+        "sha256": "34d364bcd76419d2cd4fd82757d17438be8c66fcc6f564bb79e3ca6b5c9d72e8"
+      },
+      {
+        "path": "dmlr_submission_FinSurvivalDatasheet.pdf",
+        "sha256": "62472a39952326298096be51e825dc6b69b1764e0526856dd5edf84e461cb7b0"
+      },
+      {
+        "path": "Prediction/cox_regression.R",
+        "sha256": "13de3e7824eca5b6f7bd9d20c4e402202120976b32a29d35cd62b01f64a270ae"
+      },
+      {
+        "path": "Prediction/gbm_regression.R",
+        "sha256": "76d5ffa1c59e768d9362f83578851a29103797c04b16f9e1b7d0f1b2b4f27c72"
+      },
+      {
+        "path": "Prediction/DeepHit.Rmd",
+        "sha256": "28ded53b82d4dd7b92494034677ad8f6ef321c9bd7115da0c523bd09647c8d38"
+      },
+      {
+        "path": "Prediction/xgboost_regression.R",
+        "sha256": "2669bec241a5f2608b47e8e2d3e6f13e4570057aaf5b8a7515e9f15aacf85f79"
+      },
+      {
+        "path": "Prediction/concordanceIndex.R",
+        "sha256": "062c118009a4dafbbb01251613a037894c46d08e8c93cc46e17bd72022e88138"
+      },
+      {
+        "path": "Prediction/aft_regression.R",
+        "sha256": "f721ffa3a4916c7ebf6a4c25676f4edfbc8ddf0ce2ef8134616b9243800b4209"
+      },
+      {
+        "path": "Prediction/GetResults.Rmd",
+        "sha256": "6250558021cfde21694a6098088548452a790b7ea7227ab704cbf72a818ef242"
+      },
+      {
+        "path": "Prediction/DeepSurv.Rmd",
+        "sha256": "07db6599bb9ed3e60c3f8da20b23b79570fbca750543a010d531a3a833a38230"
+      },
+      {
+        "path": "Classification/deephit_model.py",
+        "sha256": "4a5e52d11d698c634e8f919719dc53a736900ecc45606310821da5c105c8287d"
+      },
+      {
+        "path": "Classification/deep_learning_models.R",
+        "sha256": "57749c4a075e85398865d6a4d81ce4426f0a8170186a91c6fe220c574a388143"
+      },
+      {
+        "path": "Classification/survivalData_pipeline.Rmd",
+        "sha256": "bed57f5a444c56db601c09271a284dbef208f20d89e59180b4f09dc88f0863b2"
+      },
+      {
+        "path": "Classification/model_evaluation_visual.R",
+        "sha256": "3990178ec83a6b2d786de569426c702f8525c426f9df4c011c9646a8d791f9ee"
+      },
+      {
+        "path": "Classification/survivalData_pipeline_final.Rmd",
+        "sha256": "45137a9bbcc91d784fb435364f294179c0695df05d2941b23cf039439ad3d82f"
+      },
+      {
+        "path": "Classification/survivalData_pipeline_example.Rmd",
+        "sha256": "23e7cc1591a24df0fbf459a02423f03c25baca0613fdb7077441c480dfa4a347"
+      },
+      {
+        "path": "Classification/get_classification_cutoff.R",
+        "sha256": "52e8a155ffa7190da52968085fd013aafc121428bc716b9e310a2b63541e8277"
+      },
+      {
+        "path": "Classification/deepLearning_classification_model.py",
+        "sha256": "68c21de253a0c92923167a3568a4fccbb87890020fa036ba7ee76d70a291b25c"
+      },
+      {
+        "path": "Classification/data_processing.R",
+        "sha256": "6003c1ece39b4aa3a89a63133419d69a1743a2f4ef4a1c0dd32344ba36563fee"
+      },
+      {
+        "path": "Classification/classification_models.R",
+        "sha256": "af71f50c1cfe2edf404904de13cadb1763abd8c966006b291c3dad72058df74f"
+      },
+      {
+        "path": "Classification/README.md",
+        "sha256": "40a950d51a9405e334c024b8b660e511350aabd84377880adba22c6d42971e1d"
+      },
+      {
+        "path": "Figures_and_Tables/createKMCurves.Rmd",
+        "sha256": "2cca503819fd07012e8f62649c46632edc80362c9175a93968d3277847e34d45"
+      },
+      {
+        "path": "Figures_and_Tables/classificationResults.pdf",
+        "sha256": "7c5af33807cd4b9f0f50b527d3358a3126dc2eea6abf117bcacc171e88ea1479"
+      },
+      {
+        "path": "Figures_and_Tables/predictionResults.pdf",
+        "sha256": "163a2b7e5fc0b6162853cc1c1c269ef1b12173541735932f688723a8ba88edaf"
+      },
+      {
+        "path": "Figures_and_Tables/present_results.Rmd",
+        "sha256": "e705c299cdeb2af5117871f99bc48c55bedf228a3b1b76cd04bd7bde6b21acc5"
+      },
+      {
+        "path": "Survival_Data_Creation_Functions/createTrainTestSplit.R",
+        "sha256": "511104b93d8f711bde653e2b3c15545944e1fe066fe1e3e617bae6bd81971da9"
+      },
+      {
+        "path": "Survival_Data_Creation_Functions/feature_creation.R",
+        "sha256": "15b7ffcf2e1a85fe66c21f874ea739e3d7b0355eedd9eb3f0b10a32b1b4a2f45"
+      },
+      {
+        "path": "Survival_Data_Creation_Functions/createLendingProtocolSurvivalData.R",
+        "sha256": "b881055b6ab1ef5ac406e0545a5b6de109baca57fe2ba26b24c6994ccfa0204d"
+      },
+      {
+        "path": "Survival_Data_Creation_Functions/createSurvData.R",
+        "sha256": "d12c1342f886001888dd0bc25e5832d369ad6641a06f4aeddaf6b6d8ee69197f"
+      },
+      {
+        "path": "Classification/RMST_Calculations/RMST_Table_New.png",
+        "sha256": "a9a797a23ec8ce37bd13d2fabce83f2307f2cefb1fd538b2c601e6cfa4a21302"
+      },
+      {
+        "path": "Classification/RMST_Calculations/RMST-Stats-Tests.Rmd",
+        "sha256": "0ddc6b734161540a23a1d64361ba0156fc87102f807d35df7640adee896ea78f"
+      },
+      {
+        "path": "Classification/RMST_Calculations/RMST-Table.png",
+        "sha256": "9d7652c0a44c2a612364d1be5fbdbe92ebb95cad57aef7a0ea774eed81e6b697"
+      },
+      {
+        "path": "Figures_and_Tables/figures/kmCurves.pdf",
+        "sha256": "307cfb183d61226d4c2f7cd73dc2ebe54048571e95955cf254af6d1f0a1367a2"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aave-data-pipeline"
+version = "0.1.0"
+description = "Cache-preserving Aave V3 collection and explicit survival datasets"
+requires-python = ">=3.10"
+dependencies = ["tqdm>=4.64", "pandas>=1.5", "numpy>=1.23"]
+
+[project.optional-dependencies]
+rds = ["pyreadr>=0.5"]
+preprocessing = ["scikit-learn>=1.2"]
+
+[project.scripts]
+aave-collect = "aave_data_pipeline.collect:main"
+aave-survival = "aave_data_pipeline.survival:main"
+aave-cache-audit = "aave_data_pipeline.audit:main"
+
+[tool.setuptools.packages.find]
+include = ["aave_data_pipeline*"]
