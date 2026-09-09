@@ -1,0 +1,265 @@
+{
+  "cohort_profiles": 10,
+  "profile_transaction_checkpoints": 393,
+  "before": {
+    "strict": {
+      "tp": 3,
+      "fp": 10,
+      "tn": 372,
+      "fn": 8,
+      "precision": 0.23076923076923078,
+      "recall": 0.2727272727272727,
+      "fpr": 0.02617801047120419,
+      "fnr": 0.7272727272727273
+    },
+    "static": {
+      "tp": 3,
+      "fp": 27,
+      "tn": 355,
+      "fn": 8,
+      "precision": 0.1,
+      "recall": 0.2727272727272727,
+      "fpr": 0.07068062827225131,
+      "fnr": 0.7272727272727273
+    },
+    "dynamic": {
+      "tp": 3,
+      "fp": 35,
+      "tn": 347,
+      "fn": 8,
+      "precision": 0.07894736842105263,
+      "recall": 0.2727272727272727,
+      "fpr": 0.09162303664921466,
+      "fnr": 0.7272727272727273
+    }
+  },
+  "after": {
+    "strict": {
+      "tp": 1,
+      "fp": 7,
+      "tn": 375,
+      "fn": 10,
+      "precision": 0.125,
+      "recall": 0.09090909090909091,
+      "fpr": 0.01832460732984293,
+      "fnr": 0.9090909090909091
+    },
+    "static": {
+      "tp": 2,
+      "fp": 14,
+      "tn": 368,
+      "fn": 9,
+      "precision": 0.125,
+      "recall": 0.18181818181818182,
+      "fpr": 0.03664921465968586,
+      "fnr": 0.8181818181818182
+    },
+    "dynamic": {
+      "tp": 3,
+      "fp": 17,
+      "tn": 365,
+      "fn": 8,
+      "precision": 0.15,
+      "recall": 0.2727272727272727,
+      "fpr": 0.04450261780104712,
+      "fnr": 0.7272727272727273
+    }
+  },
+  "before_failures": 106,
+  "after_failures": 116,
+  "zero_debt_observed_liquidations_before": 6,
+  "zero_debt_observed_liquidations_after": 6,
+  "changed_strict_warning_count": 5,
+  "caveat": "diagnostic synthetic initial state/parameters and transaction-derived prices; not independent historical accuracy",
+  "trace_examples": {
+    "false_positive": {
+      "checkpoint": {
+        "checkpoint_id": "0xcffabd8aa79802c96244d2d46245a91b9273dd91:63:1693065372",
+        "account": "0xcffabd8aa79802c96244d2d46245a91b9273dd91",
+        "timestamp": 1693065372,
+        "event_index": 63,
+        "action": "Repay",
+        "observed": 0,
+        "strict": 1,
+        "static": 1,
+        "dynamic": 1,
+        "last_action_timestamp": 1692173783,
+        "prior_failed_events": 35,
+        "state": {
+          "total_collateral_usd": 799.0959531129979,
+          "total_debt_usd": 815.0657127331299,
+          "available_borrows_usd": 0.0,
+          "health_factor": 0.8333457652983659,
+          "effective_liquidation_threshold": 0.85
+        },
+        "prices": {
+          "WPOL": {
+            "price": 0.54761202,
+            "timestamp": 1693065372,
+            "age_seconds": 0
+          },
+          "USDC": {
+            "price": 1.0001390000000001,
+            "timestamp": 1693065346,
+            "age_seconds": 26
+          },
+          "USDT": {
+            "price": 0.9995127300000002,
+            "timestamp": 1693065372,
+            "age_seconds": 0
+          }
+        },
+        "scaled_collateral": {
+          "WPOL": 1459.237423446253
+        },
+        "scaled_debt": {
+          "USDC": 0.0,
+          "USDT": 813.8816433039894
+        },
+        "zero_debt_observed_liquidation": false
+      },
+      "first_replay_failure": {
+        "checkpoint_id": "0xcffabd8aa79802c96244d2d46245a91b9273dd91:5:1681451669",
+        "action": "Deposit",
+        "error": "Insufficient USDC in wallet. Have: 3897.208532, Need: 4499.090967. Simulator wallet balance (from inference).",
+        "first_failure": true
+      },
+      "first_state_divergence_vs_chain": "unknown; no independent chain state"
+    },
+    "false_negative": {
+      "checkpoint": {
+        "checkpoint_id": "0xcffabd8aa79802c96244d2d46245a91b9273dd91:15:1686370900",
+        "account": "0xcffabd8aa79802c96244d2d46245a91b9273dd91",
+        "timestamp": 1686370900,
+        "event_index": 15,
+        "action": "Liquidated",
+        "observed": 1,
+        "strict": 0,
+        "static": 0,
+        "dynamic": 0,
+        "last_action_timestamp": 1686362221,
+        "prior_failed_events": 4,
+        "state": {
+          "total_collateral_usd": 396.4625201,
+          "total_debt_usd": 0.0,
+          "available_borrows_usd": 317.17001608000004,
+          "health_factor": "inf",
+          "effective_liquidation_threshold": 0.85
+        },
+        "prices": {
+          "USDC": {
+            "price": 1.0,
+            "timestamp": 1686370790,
+            "age_seconds": 110
+          },
+          "USDT": {
+            "price": 1.00001,
+            "timestamp": 1686368986,
+            "age_seconds": 1914
+          },
+          "WPOL": {
+            "price": 0.63739955,
+            "timestamp": 1686370900,
+            "age_seconds": 0
+          }
+        },
+        "scaled_collateral": {
+          "WPOL": 622.0
+        },
+        "scaled_debt": {
+          "USDC": 0.0,
+          "USDT": 0.0
+        },
+        "zero_debt_observed_liquidation": true
+      },
+      "first_replay_failure": {
+        "checkpoint_id": "0xcffabd8aa79802c96244d2d46245a91b9273dd91:5:1681451669",
+        "action": "Deposit",
+        "error": "Insufficient USDC in wallet. Have: 3897.208532, Need: 4499.090967. Simulator wallet balance (from inference).",
+        "first_failure": true
+      },
+      "first_state_divergence_vs_chain": "unknown; no independent chain state"
+    }
+  },
+  "funding_ablation": {
+    "before-minimum": {
+      "revision": "be8a6f7",
+      "funding": "retrospective_minimum",
+      "metrics": {
+        "strict": {
+          "tp": 1,
+          "fp": 7,
+          "tn": 375,
+          "fn": 10,
+          "precision": 0.125,
+          "recall": 0.09090909090909091,
+          "fpr": 0.01832460732984293,
+          "fnr": 0.9090909090909091
+        },
+        "static": {
+          "tp": 1,
+          "fp": 16,
+          "tn": 366,
+          "fn": 10,
+          "precision": 0.058823529411764705,
+          "recall": 0.09090909090909091,
+          "fpr": 0.041884816753926704,
+          "fnr": 0.9090909090909091
+        },
+        "dynamic": {
+          "tp": 3,
+          "fp": 17,
+          "tn": 365,
+          "fn": 8,
+          "precision": 0.15,
+          "recall": 0.2727272727272727,
+          "fpr": 0.04450261780104712,
+          "fnr": 0.7272727272727273
+        }
+      },
+      "checkpoints": 393,
+      "zero_debt_observed_liquidations": 0,
+      "failed_actions": 34
+    },
+    "after-minimum": {
+      "revision": "b9d402c1",
+      "funding": "retrospective_minimum",
+      "metrics": {
+        "strict": {
+          "tp": 0,
+          "fp": 6,
+          "tn": 376,
+          "fn": 11,
+          "precision": 0.0,
+          "recall": 0.0,
+          "fpr": 0.015706806282722512,
+          "fnr": 1.0
+        },
+        "static": {
+          "tp": 1,
+          "fp": 12,
+          "tn": 370,
+          "fn": 10,
+          "precision": 0.07692307692307693,
+          "recall": 0.09090909090909091,
+          "fpr": 0.031413612565445025,
+          "fnr": 0.9090909090909091
+        },
+        "dynamic": {
+          "tp": 3,
+          "fp": 13,
+          "tn": 369,
+          "fn": 8,
+          "precision": 0.1875,
+          "recall": 0.2727272727272727,
+          "fpr": 0.034031413612565446,
+          "fnr": 0.7272727272727273
+        }
+      },
+      "checkpoints": 393,
+      "zero_debt_observed_liquidations": 0,
+      "failed_actions": 48
+    }
+  },
+  "interpretation": "No improvement in strict observed-event detection on this diagnostic. Negative cases are other recorded actions, not certified healthy states; no warning lead-time horizon. Funding and failed histories dominate interpretability."
+}

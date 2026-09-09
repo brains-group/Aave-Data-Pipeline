@@ -1,0 +1,82 @@
+[
+  {
+    "path": "/home/spadef/Aave-Action-Recommender/profiles/liquidated_profiles/profiles/user_0xcffabd8aa79802c96244d2d46245a91b9273dd91.json",
+    "sha256": "a0add99516a9e6323d063b3e19fb3a717b968ca75d588df5b71a9dba1cad7432",
+    "group": "liquidated_profiles",
+    "transactions": 67,
+    "first_timestamp": 1680820521,
+    "last_timestamp": 1693065440
+  },
+  {
+    "path": "/home/spadef/Aave-Action-Recommender/profiles/liquidated_profiles/profiles/user_0x33982ada4d864436e5da244934169db2ce41c23c.json",
+    "sha256": "b79932d0cb5c8b513702773e7b862de235b7814aac8d3d315464f42a2e9d34a0",
+    "group": "liquidated_profiles",
+    "transactions": 111,
+    "first_timestamp": 1728873124,
+    "last_timestamp": 1748513991
+  },
+  {
+    "path": "/home/spadef/Aave-Action-Recommender/profiles/liquidated_profiles/profiles/user_0x87ee12898a2b9ee67f1b577c0b84d769c4844432.json",
+    "sha256": "4807e3f2a23bd2b44c236cbdaa9681b84ecfee010be73f946c135f5804c041e9",
+    "group": "liquidated_profiles",
+    "transactions": 19,
+    "first_timestamp": 1699832887,
+    "last_timestamp": 1741844159
+  },
+  {
+    "path": "/home/spadef/Aave-Action-Recommender/profiles/liquidated_profiles/profiles/user_0x5de64f9503064344db3202d95ceb73c420dccd57.json",
+    "sha256": "f5f29a5cd949edc022e64065787cae3eeda7e1cf639bb5c945c9efc623e667b5",
+    "group": "liquidated_profiles",
+    "transactions": 16,
+    "first_timestamp": 1700465989,
+    "last_timestamp": 1718478620
+  },
+  {
+    "path": "/home/spadef/Aave-Action-Recommender/profiles/liquidated_profiles/profiles/user_0xc0d7c354320e0a67378cf707b50a08cdb97b2aac.json",
+    "sha256": "dafbb96ba051b2a53371bd3b28f9ea65b36fa2bc1993967dac61092441a4ec5e",
+    "group": "liquidated_profiles",
+    "transactions": 40,
+    "first_timestamp": 1660782371,
+    "last_timestamp": 1679104854
+  },
+  {
+    "path": "/home/spadef/Aave-Action-Recommender/profiles/non_liquidated_profiles/profiles/user_0xbdc06ffc7e872fca46a796f7b2c91f20bf820ff9.json",
+    "sha256": "c297837dbbe7163f6942970bc4243b3541f1bb3ac0833e368dfec2606085e4c3",
+    "group": "non_liquidated_profiles",
+    "transactions": 29,
+    "first_timestamp": 1666640741,
+    "last_timestamp": 1714711454
+  },
+  {
+    "path": "/home/spadef/Aave-Action-Recommender/profiles/non_liquidated_profiles/profiles/user_0xbc6b439e88dd23d0bcaa3720d15939edb916c509.json",
+    "sha256": "2e22cadd7e2c21f99224eea36cbff787c2920d0bf81d7a1bca2c3ed7818438e7",
+    "group": "non_liquidated_profiles",
+    "transactions": 24,
+    "first_timestamp": 1743223681,
+    "last_timestamp": 1748973470
+  },
+  {
+    "path": "/home/spadef/Aave-Action-Recommender/profiles/non_liquidated_profiles/profiles/user_0x1ac7bf5c48fd170f765c72c1a057af535ebfc7d6.json",
+    "sha256": "73c4db2c909cdbbdfec5dde2ae243a675ba6f624b5199c0416be22e494a69a86",
+    "group": "non_liquidated_profiles",
+    "transactions": 17,
+    "first_timestamp": 1709538097,
+    "last_timestamp": 1752958976
+  },
+  {
+    "path": "/home/spadef/Aave-Action-Recommender/profiles/non_liquidated_profiles/profiles/user_0x1f0a8c7c52f56944ce0f418856f61f299731be62.json",
+    "sha256": "014eb6cce9fce4708a5a997a39220fd4d9eb164dfcc90bbb26df1d40bd4ee083",
+    "group": "non_liquidated_profiles",
+    "transactions": 24,
+    "first_timestamp": 1666367463,
+    "last_timestamp": 1682706955
+  },
+  {
+    "path": "/home/spadef/Aave-Action-Recommender/profiles/non_liquidated_profiles/profiles/user_0xbc5388ad815b08715122a6703be6a1091eb2a24d.json",
+    "sha256": "08074f0aba5bb37a6d0ed6856d4396f4f14e497a46502059ee9ebe77371db14b",
+    "group": "non_liquidated_profiles",
+    "transactions": 46,
+    "first_timestamp": 1663747986,
+    "last_timestamp": 1721288816
+  }
+]

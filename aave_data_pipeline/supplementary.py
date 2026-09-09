@@ -11,7 +11,7 @@ from pathlib import Path
 import sqlite3
 from .datasets import market_name
 
-SOURCES = {'collateral_usage','atoken_transfer','emode','reserve_parameters',
+SOURCES = {'liquidation_details','collateral_usage','atoken_transfer','emode','reserve_parameters',
            'reserve_indices','oracle_prices','rate_mode','flashloan','user_reserve_snapshot'}
 
 

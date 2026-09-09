@@ -1,6 +1,7 @@
 # Shared Aave pipeline and simulator revision work
 
-Status: in progress. No collection HTTP requests made. No historical result reproduced yet.
+Status: implemented local integration and targeted fixes; bounded offline diagnostic complete.
+No authenticated collection requests. Full historical validation and parity remain incomplete.
 
 ## Baseline
 
@@ -99,7 +100,7 @@ Distance-group binary search needs monotonicity verification before minimum-pert
 - Sensitivity code explicitly assumes distance-group monotonicity and returns no-change if
   the most distant group does not flip. No proof supplied; minimum-distance claim unverified.
 
-## Implemented (staged before installation)
+## Implemented and installed
 
 Shared installable package extracted from collector. Preserves chronological/cache fixes and
 adds explicit HTTP attempt budget (zero by default), caller config/env/log paths, requested
@@ -148,10 +149,138 @@ No reviewer concern is marked resolved based solely on unit tests.
 
 ## Current checks
 
-23 shared-package Python tests, six simulator tests and one consumer repayment test pass.
+The initial installation passed 23 shared-package Python tests, six simulator tests and one consumer repayment test; updated checks are recorded below.
 Installable-package smoke build/install used --no-index --no-deps --no-build-isolation
 in /tmp. Journal formatter smoke created all 25 pair exports on a deterministic fixture.
 A new corrected feature view fixes its schema to all five core types even in a short
 prefix; R-parity retains the observed-type schema and optional original raw event fields.
 Neither view joins mutable account totals. Unused model/ROSE helpers are not ported.
 Source R preprocessing includes optional exogenous variants; those remain deferred.
+
+## Installed work and bounded diagnostic (2026-09-09)
+
+The shared repository is installed at `/home/spadef/Aave-Data-Pipeline`, with real gitlinks
+in **both craft-soc and Aave-Action-Recommender**. Its source URL is local and absolute;
+no remote was invented or published. See PIPELINE.md in either consumer for setup.
+Initial source commits: pipeline e8a3e621e3ce55ab7e404c53e50510fb94e0a5fb;
+simulator b9d402c1a74d17dfd3014553425626f99e9038d1. Later source updates are identified
+by Git history and the consumers' gitlinks; use the revision commands below.
+Original dirty files remain outside the integration commits. No cache was moved.
+
+Additional fixes: profiles with unverified liquidation debt/collateral legs retain an
+observed-only label instead of fabricated USDC collateral. Replay helpers explicitly
+report failure for these incomplete events. The generic replay helper now attempts
+past liquidation state updates instead of silently ignoring every liquidation, and
+records execution success. Its execution still uses simulator rules, not an independently
+reconstructed exact historical seizure. Existing old profiles are not silently repaired.
+A separate enrichment adapter converts debt and seized collateral with their own decimals
+and joins explicit log identities; supplementary data never enters survival observations.
+
+Profile discovery now compares overlapping sources before deduplication and rejects
+conflicting state/transactions. There are 13,998 files in liquidated_profiles and 189,655
+in non_liquidated_profiles, with 13,990 overlapping filenames: 189,663 distinct filenames,
+not 203,653 unique accounts. Five inspected overlaps differ only in description; the
+remaining overlapping content has not all been compared. Folder membership is not an
+outcome label: the nominally non-liquidated directory also contains liquidation events.
+
+### Same-cohort replay
+
+Ten unique accounts, 393 recorded transaction checkpoints, 11 observed liquidations,
+382 other actions. Frozen source hashes and paths: docs/replay-cohort.json in the shared
+repository or docs/revision-evidence/replay-cohort.json in the simulator. Selection:
+deterministic filename-hash order, five from each source folder, 10–200 transactions,
+positive-folder profiles required to contain liquidation. This is a bounded diagnostic,
+not a representative sample of all borrowers or a tuned/held-out policy study.
+The old/fixed comparison uses be8a6f7 versus b9d402c and identical input/capital assumptions.
+
+| Funding | Logic | TP | FP | TN | FN | Precision | Recall | FPR | Failed actions | Zero-debt positive events |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Existing profile wallet | Old | 3 | 10 | 372 | 8 | 23.08% | 27.27% | 2.62% | 106 | 6 |
+| Existing profile wallet | Fixed | 1 | 7 | 375 | 10 | 12.50% | 9.09% | 1.83% | 116 | 6 |
+| Retrospective minimum wallet | Old | 1 | 7 | 375 | 10 | 12.50% | 9.09% | 1.83% | 34 | 0 |
+| Retrospective minimum wallet | Fixed | 0 | 6 | 376 | 11 | 0% | 0% | 1.57% | 48 | 0 |
+
+No detection improvement demonstrated. FNR is 1-recall. All failed histories retained;
+no price exclusions in these runs. Negative cases are non-liquidation recorded actions,
+not verified healthy states. This compares warnings with execution labels at transaction
+time, not a future prediction horizon; warning lead time is not established.
+Replay begins with empty positions, static synthetic reserve defaults, 1e9 reserve liquidity,
+transaction-derived cached as-of prices and timestamp-only ordering. Liquidators receive
+explicit synthetic funding in this diagnostic. Existing wallets and retrospective minimum
+wallets both use future-derived capital information; neither establishes feasible earlier
+recommendation capital. Funding eliminated the six zero-debt positives, demonstrating why
+these cases must be investigated before exclusion. No direct RPC or supplementary enrichment
+was used; old/enriched-data comparison remains blocked by missing historical evidence.
+
+Portable summary includes static/dynamic margins and representative FP/FN traces with
+prices, balances, prior failures and source hashes. Full 393-row traces and logs remain in
+`/home/spadef/.codex/sessions/2026/09/08/aave-work/replay-*.json` outside source Git.
+For one FN, a prior deposit failed because 4,499.090967 USDC was required and only
+3,897.208532 was available. First divergence from independent on-chain state is unknown.
+No threshold was tuned to match these labels. The later helper/coverage fixes do not enter
+this direct-protocol harness; the measured logic version above is explicitly frozen.
+
+### Additional manuscript lineage
+
+The 69.11% claim traces to analyze_simulation_results.py's eventual-risk calculation,
+not a standalone fixed-horizon Cox evaluation. Existing HF-only statistics give TP=157,
+FP=533, FN=974, approximate TN=3,217; (157+3217)/4882=69.1110%. The matrix sums to
+4,881 because one at-risk profile has no future transactions, while the accuracy denominator
+includes all 4,882. TN assumes no recorded future liquidation means safe. Derived precision
+is 22.75%, recall 13.88%; these are audit calculations, not newly trained predictive results.
+The 25 journal pair CSVs total about 44.48 GiB; 21.8M record/90-feature lineage remains
+unresolved and no full row count was substituted for it.
+The HF-only result retains 1,470 rescues / 1,693 baseline cases, but filters based on either
+arm's detection type. The unfiltered statistics report 75 worsened profiles. Zero worsening
+therefore describes an outcome-conditioned subset. 8,400-to-5,078 initial reduction remains
+unreconciled. Paired replay assumes later recorded actions remain feasible after intervention;
+failures and funding sensitivity prevent a causal real-world interpretation.
+
+### Checks and remaining work
+
+Python validation only after the user's R steering. Shared suite: 24 tests; simulator:
+9 distinct tests; consumer repayment: one test. Installed consumer imports and collection
+help work from outside their roots. Full R/Python parity, optional exogenous feature variants,
+full-scale formatting, deployment/activation-block mapping, historical indices/oracles and
+close-factor/bonus/fees remain unfinished. No current account free quota is verified;
+zero authenticated collection requests were made. The five historical missing borrow IDs
+and one missing liquidation ID remain unresolved without mixing source provenance.
+
+No paper, cover letter, figure or bibliography was edited. The requested archive was not
+located; the local source remains provisional. `changes.sty` is unavailable in the local
+TeX search path, and neither marked nor clean builds have been verified. Future manuscript
+edits must reuse changes markup. Response notes: distinguish positive-event detection from
+accuracy; explain duplicate profiles, funding failures, outcome-conditioned exclusions and
+shared reconstruction truth; rerun before revising claims. No reviewer concern is resolved
+by these fixtures or this small diagnostic. Broad policy/model comparisons remain later work.
+
+### Reproduction commands
+
+From either consumer, initialize the local source and install:
+```bash
+git -c protocol.file.allow=always submodule update --init --recursive
+python -m pip install --no-deps --no-build-isolation -e ./Aave-Data-Pipeline
+git submodule status
+python collect_aave.py --help
+python -m aave_data_pipeline.audit --help
+python -m unittest discover -s Aave-Data-Pipeline/tests -v
+```
+The shared README documents the bounded collection and survival formatting commands;
+collection defaults to zero HTTP requests. No writer should share the cache with an active
+collector. To inspect recorded revisions: `git -C Aave-Data-Pipeline rev-parse HEAD` and,
+in the journal consumer, `git -C Aave-Simulator rev-parse HEAD`.
+
+From the simulator root, using a new output path:
+```bash
+PYTHONPATH=. python -m unittest discover -s tests -p test_revision.py -v
+PYTHONPATH=. python tools/bounded_replay.py \
+  --cohort docs/revision-evidence/replay-cohort.json \
+  --prices data/reserves/price_history.json \
+  --revision "$(git rev-parse HEAD)" --funding profile \
+  --output /tmp/aave-diagnostic-new.json
+```
+Repeat with `--funding retrospective_minimum` and a different output path. The harness
+checks frozen profile hashes and rejects duplicate accounts or existing outputs. To run
+old logic, extract `git archive be8a6f7` to a separate temporary directory and run this same
+harness with PYTHONPATH pointing at that directory and an absolute price/cohort path.
+No original simulation cache or paper result should be overwritten.

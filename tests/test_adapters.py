@@ -30,3 +30,15 @@ class AdapterTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'changed'):ingest(file,root,m)
             m['market']='avalanche'
             with self.assertRaisesRegex(ValueError,'chain ID'):ingest(file,root,m)
+
+    def test_liquidation_enrichment_has_two_units_and_keeps_core(self):
+        from aave_data_pipeline.normalization import simulator_view
+        core=pd.DataFrame([dict(id='a',type='liquidation',transactionHash='x',logIndex=1,amount=8),dict(id='b',type='liquidation',transactionHash='y',logIndex=2,amount=9)])
+        details=pd.DataFrame([dict(market='polygon',transactionHash='x',logIndex=1,debt_symbol='USDC',collateral_symbol='WETH',debt_amount_raw='1000000',debt_decimals=6,collateral_amount_raw='1000000000000000000',collateral_decimals=18)])
+        out=simulator_view(core,details,'polygon','verified-fixture')
+        self.assertEqual(out.iloc[0].debt_to_cover,'1')
+        self.assertEqual(out.iloc[0].collateral_seized,'1')
+        self.assertTrue(out.iloc[1].observed_only)
+        self.assertEqual(list(core.amount),[8,9])
+        self.assertNotIn('debt_to_cover',core)
+        with self.assertRaises(ValueError):simulator_view(core,details,'avalanche','fixture')

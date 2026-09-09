@@ -1,0 +1,48 @@
+{
+  "liquidated_folder_files": 13998,
+  "non_liquidated_folder_files": 189655,
+  "overlap_accounts": 13990,
+  "unique_filename_accounts": 189663,
+  "identical_file_sample": [
+    {
+      "account": "user_0x00000001b01122945d67cf7c972f1a2063ca4008.json",
+      "identical_files": false,
+      "liquidated_folder_events": 2,
+      "non_liquidated_folder_events": 2,
+      "liquidated_sha256": "ddfe569443ca8800f61e96dd294356cca319381d4c86008d90daa24fb11da5de",
+      "non_liquidated_sha256": "541c2284513e617b97f5f5632cc71c84d0706a02f350eb442b55f0abdd3ba6aa"
+    },
+    {
+      "account": "user_0x0000000b4d325bb539676dac6ec3413d5974cf0f.json",
+      "identical_files": false,
+      "liquidated_folder_events": 1,
+      "non_liquidated_folder_events": 1,
+      "liquidated_sha256": "f4416753a4d8253aabd62214aa4ed97ddaeb0a55f7ef788a57b3a61ad7e73c64",
+      "non_liquidated_sha256": "9df9b2e40c616744daf7a4e6f695b3208a1a230136f6a435da43f5b6f3a634dd"
+    },
+    {
+      "account": "user_0x000000c77ab4952aa5c43ee8047bca9ca7265b3d.json",
+      "identical_files": false,
+      "liquidated_folder_events": 1,
+      "non_liquidated_folder_events": 1,
+      "liquidated_sha256": "d95b66c47e0685776bc5d178d3957fea9f823211b020c94b9b1ad69a917c61fd",
+      "non_liquidated_sha256": "3e19fd0260398034f7950ab44be880b952a49ecda55982ab066c65ace11b118d"
+    },
+    {
+      "account": "user_0x000006eee6e39015cb523aebdd4d0b1855aba682.json",
+      "identical_files": false,
+      "liquidated_folder_events": 5,
+      "non_liquidated_folder_events": 5,
+      "liquidated_sha256": "17237f3cc545d66168bb87fb65ce3f78eac2ff0745f820a2e666fad6471b2bcb",
+      "non_liquidated_sha256": "293fd822f51b72770293c23cddf829444f9f9b53637c4f492171e98cfcb0cd25"
+    },
+    {
+      "account": "user_0x000488429af0fe9b62f61e3f33638d3970a3cec9.json",
+      "identical_files": false,
+      "liquidated_folder_events": 1,
+      "non_liquidated_folder_events": 1,
+      "liquidated_sha256": "e73498e49e066eb3a2bc565aa1dfea8726be9b4645fa9e3f8a48305912555e90",
+      "non_liquidated_sha256": "a8ad8cd38972f3eb97eb4a5e02a7bfb36ebae6d26333818a4f90b4bdfbd19eb9"
+    }
+  ]
+}
